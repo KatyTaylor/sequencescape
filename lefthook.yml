@@ -11,6 +11,9 @@ pre-commit:
     eslint:
       glob: 'app/javascript/**/*.{vue,js}'
       run: yarn lintOnly {staged_files} || (echo 'Run `lefthook run fix` to run autocrrect on staged files only'; exit 1)
+    gitleaks:
+      run: gitleaks -v --unstaged
+
 
 fix:
   parallel: true
